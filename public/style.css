@@ -1,149 +1,88 @@
-body {
-    margin: 0;
-    font-family: "Heebo", sans-serif;
-    background: #f4f4f4;
-    color: #222;
-}
-
-/* ===== תפריט עליון ===== */
-header {
-    background: #000;
-    color: white;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-header .container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+/* איפוס עיצוב בסיסי */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-header a {
-    color: white;
+/* גוף האתר */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #222;
+    padding: 10px;
+}
+
+/* מכולה ראשית */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* כותרת ראשית */
+h1, h2, h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* תמונות */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* קישורים */
+a {
+    color: #0066cc;
     text-decoration: none;
-    font-weight: 500;
 }
 
-.logo {
-    font-weight: 700;
-    font-size: 22px;
+a:hover {
+    text-decoration: underline;
 }
 
-/* ===== אזור פתיחה ===== */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url("https://picsum.photos/id/1002/1600/900") center/cover no-repeat;
+/* כפתורים */
+button {
+    padding: 10px 20px;
+    background-color: #0066cc;
     color: white;
-    text-align: center;
-    padding: 140px 20px;
-    position: relative; /* מאפשר מיקום מוחלט של התמונות */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.hero h2 {
-    font-size: 48px;
-    margin-bottom: 10px;
+button:hover {
+    background-color: #004999;
 }
 
-.hero p {
-    font-size: 20px;
-    margin-bottom: 25px;
-}
-
-/* כפתור */
-.btn {
-    display: inline-block;
-    background: #ff8c00;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 18px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #e07a00;
-}
-
-/* ===== גלריה ===== */
-.section {
-    padding: 70px 20px;
+/* כותרת עליונה */
+header {
+    padding: 20px 0;
     text-align: center;
 }
 
-.gallery .grid {
-    max-width: 1100px;
-    margin: 40px auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 18px;
-}
+/* מדיה קווריז – התאמה למובייל */
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
 
-.gallery img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: 0.3s;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-}
+    header {
+        padding: 10px 0;
+    }
 
-.gallery img:hover {
-    transform: scale(1.04);
-    box-shadow: 0 6px 24px rgba(0,0,0,0.3);
-}
+    h1 {
+        font-size: 1.5em;
+    }
 
-/* ===== עליי ===== */
-.about p {
-    max-width: 800px;
-    margin: auto;
-    font-size: 18px;
-    line-height: 1.7;
-}
+    h2 {
+        font-size: 1.2em;
+    }
 
-/* ===== יצירת קשר ===== */
-.contact {
-    background: #fff;
-}
-
-/* ===== התמונות על ה־hero (גדולות יותר) ===== */
-.hero-highlight {
-    position: absolute;
-    width: 220px;   /* גדולות יותר */
-    height: 220px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid gold;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-.hero-highlight:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-}
-
-.hero-left {
-    left: 20px;
-    bottom: 20px;
-}
-
-.hero-right {
-    right: 20px;
-    bottom: 20px;
+    .container {
+        width: 95%;
+    }
 }
