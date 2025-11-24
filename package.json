@@ -14,3 +14,17 @@
     "path": "^0.12.7"
   }
 }
+// server.js
+const express = require('express');
+const path = require('path');
+const app = express();
+
+// שימוש בתיקיית public לשרת HTML, CSS, תמונות וכו'
+app.use(express.static(path.join(__dirname, 'public')));
+
+// קבלת פורט מ‑Render או ברירת מחדל 10000
+const PORT = process.env.PORT || 10000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
